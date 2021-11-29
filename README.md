@@ -9,7 +9,7 @@ npm install ton-pay
 ## Usage
 
 ### Default
-```
+```javascript
 const { testTonSdk, tonSdk } = require("ton-pay");
 
 const token = "3270:AAVapxquz1A2WhKpLEQqhNjIZbvZygevltk";
@@ -19,13 +19,11 @@ async function getMe() {
 
   const response = await sdk.getMe();
   console.log(response.data);
-
-  // do some work
 }
 ```
 
 ### With custom client
-```
+```javascript
 const { TonServiceCreator } = require("ton-pay");
 
 const client = axios.create({ baseURL: 'https://pay.crypt.bot' });
@@ -92,7 +90,9 @@ Optional. Currency code.
 * invoiceIds (String)
 Optional. Invoice IDs separated by comma.
 * status (String)
-Optional. Status of invoices. Available statusses: active or paid. Default: all statusses.
+Optional. Status of invoices.
+  * `active`
+  * `paid`
 * offset (Number)
 Optional. Offset needed to return a specific subset of  invoices. Default 0.
 * count (Number) 
