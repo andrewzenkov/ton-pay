@@ -118,4 +118,3 @@ Use this method to get exchange rates of supported currencies. Returns array of 
 
 ### getCurrencies
 Use this method to get supported currencies. Returns array of currencies.
->>>>>>> a9c939859795d2c51b710f37d684616e597c77d5
