@@ -1,11 +1,11 @@
 const { TonService } = require("./tonService");
 const { client, testClient } = require("./client");
 
-const testTonSdk = new TonService({ client: testClient });
-const tonSdk = new TonService({ client });
+const testTonService = new TonService({ client: testClient });
+const tonService = new TonService({ client });
 
 module.exports = {
-  TonService,
-  testTonSdk,
-  tonSdk,
+  TonServiceCreator: TonService,
+  testTonService,
+  tonService,
 };

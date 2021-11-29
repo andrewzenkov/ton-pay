@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const { SDKAPI } = require("./api");
+const { SDK } = require("./sdk");
 const { errors } = require("./constants");
 
 class TonService {
@@ -27,10 +27,10 @@ class TonService {
     return token;
   }
 
-  getApiSdk(token = "") {
+  getSdk(token = "") {
     this.token = this.validateToken(token);
 
-    return new SDKAPI(this.client, this.token);
+    return new SDK(this.client, this.token);
   }
 }
 

@@ -1,2 +1,7 @@
 # ton-pay
-ton/pay
+
+## Installation
+
+```
+npm install ton-pay
+```

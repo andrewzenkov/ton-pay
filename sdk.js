@@ -11,7 +11,7 @@ const {
   GetPayments,
 } = require("./methods");
 
-class SDKAPI {
+class SDK {
   client = null;
   token = "";
 
@@ -54,5 +54,5 @@ class SDKAPI {
 }
 
 module.exports = {
-  SDKAPI,
+  SDK,
 };
