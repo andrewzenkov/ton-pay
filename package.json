@@ -1,0 +1,22 @@
+{
+  "name": "ton-pay",
+  "version": "1.0.0",
+  "description": "ton/pay",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewzenkov/ton-pay.git"
+  },
+  "author": "andrewzenkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewzenkov/ton-pay/issues"
+  },
+  "homepage": "https://github.com/andrewzenkov/ton-pay#readme",
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}
