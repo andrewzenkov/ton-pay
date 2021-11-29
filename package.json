@@ -1,6 +1,6 @@
 {
   "name": "ton-pay",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ton/pay",
   "main": "index.js",
   "scripts": {
