@@ -1,5 +1,5 @@
-const { TonService } = require("./tonService");
-const { client, testClient } = require("./client");
+const { TonService } = require("./src/tonService");
+const { client, testClient } = require("./src/client");
 
 const testTonService = new TonService({ client: testClient });
 const tonService = new TonService({ client });
