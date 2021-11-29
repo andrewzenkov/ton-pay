@@ -4,27 +4,47 @@
 
 ```
 npm install ton-pay
-<<<<<<< HEAD
-```
-=======
 ```
 
 ## Usage
 
+### Default
 ```
 const { testTonSdk, tonSdk } = require("ton-pay");
 
 const token = "3270:AAVapxquz1A2WhKpLEQqhNjIZbvZygevltk";
 
-async function test() {
-  const sdk = testTonSdk.getApiSdk(token);
+async function getMe() {
+  const sdk = testTonSdk.getSdk(token);
 
-  const { data } = await sdk.getMe();
+  const response = await sdk.getMe();
+  console.log(response.data);
 
   // do some work
 }
 ```
 
+### With custom client
+```
+const { TonServiceCreator } = require("ton-pay");
+
+const client = axios.create({ baseURL: 'https://pay.crypt.bot' });
+client.interceptors.response.use(
+  (response) => response.data,
+  (err) => Promise.reject(err?.response?.data)
+);
+
+const token = "3270:AAVapxquz1A2WhKpLEQqhNjIZbvZygevltk";
+
+const service = new TonServiceCreator({ client })
+
+async function getMe() {
+  const sdk = service.getSdk(token);
+
+  const data = await sdk.getMe();
+  console.log(data);
+}
+```
 
 ## API
 
@@ -36,10 +56,10 @@ Use this method to create a new invoice. Returns object of created invoice.
 * asset (String). Currency code.
   *  `BTC`
   *  `TON`
-  *  `ETH` (only testnet)
   *  `USDT`
   *  `USDC`
   *  `BUSD`
+  *  `ETH` (only testnet)
 * amount (String)
 Amount of the invoice in float. For example: 125.50
 * description (String)
