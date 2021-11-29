@@ -26,22 +26,27 @@ async function test() {
 ## API
 
 ### getMe 
-A simple method for testing your app's authentication token. Requires no parameters. Returns basic information about the app.
+Returns basic information about the app.
 
 ### createInvoice
 Use this method to create a new invoice. Returns object of created invoice.
-* asset (String)
-Currency code. Supported assets: BTC, TON, ETH (only testnet), USDT, USDC, BUSD.
+* asset (String). Currency code.
+  *  `BTC`
+  *  `TON`
+  *  `ETH` (only testnet)
+  *  `USDT`
+  *  `USDC`
+  *  `BUSD`
 * amount (String)
 Amount of the invoice in float. For example: 125.50
 * description (String)
 Optional. Description of the invoice. Up to 1024 symbols.
 * paidBtnName (String) default - callback
-Optional. Paid button name. This button will be shown when your invoice was paid. Supported names: 
-1) viewItem - View Item
-2) openChannel - Open Channel
-3) openBot - Open Bot
-4) callback - Return
+Optional. Paid button name. This button will be shown when your invoice was paid. 
+  * `viewItem` - View Item
+  * `openChannel` - Open Channel
+  * `openBot` - Open Bot
+  * `callback` - Return
 * paidBtnUrl (String)
 Optional but requried when you use paidBtnUrl. Paid button URL. You can set any payment success link (for example link on your bot). Start with https or http.
 * payload (String, up to 1kb)
@@ -54,7 +59,13 @@ Optional. Allow pay invoice as anonymous. Default is true.
 ### getInvoices
 Use this method to get invoices of your app. On success, the returns array of invoices.
 * asset (String)
-Optional. Currency code. Supported assets: BTC, TON, ETH (only testnet), USDT, USDC, BUSD. Default: all assets.
+Optional. Currency code.
+  *  `BTC`
+  *  `TON`
+  *  `USDT`
+  *  `USDC`
+  *  `BUSD`
+  *  `ETH` (only testnet)
 * invoiceIds (String)
 Optional. Invoice IDs separated by comma.
 * status (String)
