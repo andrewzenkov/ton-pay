@@ -15,9 +15,16 @@ const { testTonSdk, tonSdk } = require("ton-pay");
 const token = "3270:AAVapxquz1A2WhKpLEQqhNjIZbvZygevltk";
 
 async function getMe() {
+  let response = null;
   const sdk = testTonSdk.getSdk(token);
 
-  const response = await sdk.getMe();
+  response = await sdk.getMe();
+  console.log(response.data);
+  
+  response = await sdk.createInvoice({
+    asset: "USDT",
+    amount: "2.0",
+  });
   console.log(response.data);
 }
 ```
